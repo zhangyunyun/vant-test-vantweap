@@ -1,0 +1,155 @@
+<!-- pages/game-zjd/zjd.wxml -->
+<view class="container">
+  <view class="Smashgolden_back">
+    <image class="bgImg" src="/images/games/zjd/bg_zjd.jpg" />
+  </view>
+  <view class="Smashgolden_content">
+    <!-- 活动规则 -->
+    <view class="rule" bindtap="handleRule">活动规则</view>
+    <view class="fenzx" bindtap="handleSharePoster">分享</view>
+    <!-- 新用户100%中奖 -->
+    <view class="newuser">新用户100%中奖</view>
+    <!-- 多少人参与活动 -->
+    <view class="participate">
+      <text>{{joinCount}}</text>
+      人正在参与活动
+    </view>
+    <!-- 灯光 -->
+    <view class="lighting">
+      <view class="lightingItem" wx:for="{{3}}" wx:key="index" data-id="{{index}}">
+        <image class="lightingImg" src="{{act == index?'/images/games/zjd/dg2.png':'/images/games/zjd/dg1.png'}}" />
+        <!-- /images/dg1.png -->
+      </view>
+    </view>
+    <!-- 金蛋区域 -->
+    <view class="daning">
+      <view class="daningItem" wx:for="{{3}}" wx:key="index" data-id="{{index}}" bindtap="handleSelEgg">
+        <image class="{{daningImgOpen == index?'daningImgOpen':'daningImg'}}" src="{{daningImgOpen == index?'/images/games/zjd/Egopen.png':'/images/games/zjd/dan.png'}}" />
+        <!-- <image class="daningImgOpen" src="/images/Egopen.png"></image> -->
+        <view class="chuizi {{actOpen == index?'chuiziActive':''}}" wx:if="{{act == index}}">
+          <image class="chuiziImg" src="/images/games/zjd/chui.png"></image>
+        </view>
+      </view>
+    </view>
+    <!-- 按钮 -->
+    <view class="btnBox">
+      <button class="{{count == 0 ? 'btnGray' : ''}}" bindtap="handleEgg">点击砸金蛋</button>
+    </view>
+    <!-- 参与机会 -->
+    <view class="opportunity">
+      <view class="opportunity_text">
+        您还有
+        <text class="word">{{count}}</text>
+        次参与机会
+      </view>
+    </view>
+    <!-- 分享说明 -->
+    <view class="explain">分享活动，还可获得额外参与次数</view>
+    <!-- 中奖记录 -->
+    <view class="record">
+      <view class="record_title">中奖记录</view>
+      <view class="record_noList" wx:if="{{recordList == 0}}">
+        <view class="noListInner">
+          <image class="noImg" src="/images/games/zjd/dog.png"></image>
+          <view class="noTxt">暂时没有记录哦~</view>
+        </view>
+      </view>
+      <view wx:else class="record_cont">
+        <view class="listItem" wx:for="{{recordList}}" wx:key="index">
+          <view class="listItem_lt">
+            <view class="avatar">
+              <!-- <image src="/images/dan.png" /> -->
+            </view>
+          </view>
+          <view class="listItem_ct">
+            <view class="name">{{item.name}}</view>
+            <view class="time">{{item.time}}</view>
+          </view>
+          <view class="listItem_rt">{{item.level}}</view>
+        </view>
+      </view>
+    </view>
+    <view class="flterr">本活动最终解释权由yunzlian所有</view>
+  </view>
+</view>
+<!-- 规则弹框 -->
+<view class="model" wx:if="{{isShowRuleDialog}}">
+  <view class="model_gz">
+    <image class="guiz_img" src="/images/games/zjd/hdgz.png"></image>
+    <view class="guiz_txt">活动规则</view>
+    <view class="contents">
+      <scroll-view scroll-y="true" style="height:500rpx;">
+        <block wx:for="{{10}}">
+          <view class="list_guze">
+            <view class="index_gz">{{index+1}}</view>
+            <view class="index_gz_cot">活动详细规则01活动详细规则01活活动详细规则01活动详细规则01活</view>
+          </view>
+        </block>
+      </scroll-view>
+    </view>
+    <view class="hext_gz_gb" catchtap="handleRule">
+      <image class="guiz_img" src="/images/games/zjd/gb.png"></image>
+    </view>
+  </view>
+</view>
+<!-- 砸蛋、中奖状态弹框 -->
+<view class="model" wx:if="{{isShowRecordDialog}}">
+  <view class="model_bk">
+    <image src="/images/zjd/model_bk.png"></image>
+    <!-- 关闭 -->
+    <view class="hext_gb" bindtap="handleCloseRecord">
+      <image src="/images/zjd/gb.png"></image>
+    </view>
+    <!-- 恭喜您、很遗憾 -->
+    <view class="hext">
+      <image src="/images/zjd/{{state == 0?'yh.png':'gx.png'}}"></image>
+    </view>
+    <!-- 中奖内容 -->
+    <view class="prize">
+      <view class="prize_img">
+        <image src="/images/zjd/{{state == 0?'dog.png':'dog_z.png'}}"></image>
+      </view>
+      <block wx:if="{{state == 0}}">
+        <view class="aslitt">没有砸中</view>
+      </block>
+      <block wx:else>
+        <view class="aslit">
+          获得
+          <text class="money">200</text>
+          积分!
+        </view>
+      </block>
+      <view class="aslits">
+        您今天还有
+        <text class="shu">{{count}}</text>
+        次砸蛋机会
+      </view>
+    </view>
+    <view class="annius" bindtap="handleBegin">再来一次</view>
+    <!-- <button class="fenzx" open-type="share" data-id="1">去分享</button> -->
+  </view>
+</view>
+<!-- 分享海报弹框 -->
+<view class="model" wx:if="{{isShowShareDialog}}">
+  <view class="model_fx">
+    <view class="shareClose" bindtap="handleCloseShare">
+      <image class="shareClose_img" src="/images/games/zjd/gb.png"></image>
+    </view>
+    <view class="shareCont">
+      <!-- <image class="shareImg" src="{{posterImgUrl}}"></image> -->
+      <canvas class="mycanvas" id="mycanvas" type="2d"></canvas>
+      <canvas class="code" id="qrcode" type="2d"></canvas>
+      <!-- 静态 -->
+      <!-- <image class="shareImg" src="{{shareImgUrl}}" style="display:none;"></image>
+      <view class="shareCode">
+        <canvas class="code" canvas-id="qrcode" style="width:100%;height:100%;" />
+      </view> -->
+    </view>
+    <view class="shareBtn">
+      <!-- 保存到相册 -->
+      <button class="btnAmblue" bindtap="saveImageToPhotosAlbum">保存到相册</button>
+      <!-- 分享海报到朋友圈 -->
+      <button class="btnShare" open-type="share" data-id="1">去分享</button>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,208 @@
+.loginBox {
+    width: 100%;
+    padding: 40rpx;
+    box-sizing: border-box;
+
+    .loginImg {
+        margin: 100rpx auto 0;
+        width: 140rpx;
+        height: 140rpx;
+
+        .imgBox {
+            width: 100%;
+            height: 100%;
+            background: #fc407d;
+            border-radius: 30rpx;
+            -webkit-border-radius: 30rpx;
+            -moz-border-radius: 30rpx;
+            -ms-border-radius: 30rpx;
+            -o-border-radius: 30rpx;
+        }
+
+        image {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .loginForm {
+        margin-top: 150rpx;
+        position: relative;
+
+        .loginFormItem {
+            margin-top: 10rpx;
+            position: relative;
+            background: #ffffff;
+            border-bottom: 1px solid #e8e8e8;
+
+            &.loginFormItemNum {
+                .formItemInner {
+                    padding-right: 210rpx;
+                }
+
+                .close {
+                    right: 170rpx;
+                }
+            }
+
+            &.loginFormItemBtn {
+                margin-top: 90rpx;
+                border-bottom: 0;
+
+                .formItemInner {
+                    padding: 0;
+                }
+            }
+        }
+
+        .formItemInner {
+            height: 90rpx;
+            line-height: 90rpx;
+            padding: 0 10rpx;
+        }
+
+        input {
+            display: block;
+            width: 100%;
+            font-size: 36rpx;
+            height: 90rpx;
+            line-height: 90rpx;
+            color: #5a5a5a;
+        }
+
+        .placeholder-class {
+            color: #b4b4b4;
+            font-size: 28rpx;
+        }
+
+        .close {
+            position: absolute;
+            right: 0;
+            top: calc(50% - 13rpx);
+            display: inline-block;
+            width: 30rpx;
+            height: 30rpx;
+        }
+
+        .code {
+            position: absolute;
+            top: calc(50% - 35rpx);
+            right: 0;
+            width: 160rpx;
+            height: 70rpx;
+            line-height: 70rpx;
+            color: #fff;
+            font-size: 28rpx;
+            padding: 0;
+            color: #535353;
+            background: none;
+
+            &.current {
+                color: #fc407d;
+            }
+        }
+
+        button.loginBtn {
+            padding: 0;
+            width: 100%;
+            height: 90rpx;
+            line-height: 90rpx;
+            text-align: center;
+            font-size: 34rpx;
+            color: #ff719e;
+            background: #ffe5ed;
+            border: 1px solid #ffe5ed;
+            border-radius: 20rpx;
+            -webkit-border-radius: 20rpx;
+            -moz-border-radius: 20rpx;
+            -ms-border-radius: 20rpx;
+            -o-border-radius: 20rpx;
+
+            &.current {
+                color: #fff;
+                background: #fc407d;
+            }
+        }
+    }
+}
+
+.x-dialog__close {
+    width: 40rpx;
+    height: 40rpx;
+}
+
+.x-dialog__close image {
+    width: 40rpx;
+    height: 40rpx;
+}
+
+/* 验证码弹框 */
+.query {
+    width: 412rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 594rpx;
+    padding: 71rpx 56rpx 55rpx;
+    border-radius: 30rpx;
+
+    .query_item_name {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 120rpx;
+    }
+
+    .query-title {
+        font-size: 36rpx;
+        color: #000;
+        margin-bottom: 46rpx;
+    }
+
+    .query-text {
+        font-size: 24rpx;
+        color: #707070;
+    }
+
+    .query_num_block {
+        width: 100%;
+        display: -webkit-flex;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .confirm {
+        margin: 58rpx 0 40rpx;
+        width: 411rpx;
+        height: 74rpx;
+        background: linear-gradient(to right, #fc407d, #fc407d);
+        border-radius: 50rpx;
+        text-align: center;
+        line-height: 74rpx;
+        font-size: 27rpx;
+        color: #fff;
+    }
+
+    .num_item_block {
+        height: 107rpx;
+        width: 56rpx;
+        border-bottom: 5rpx solid #fc407d;
+        line-height: 107rpx;
+        text-align: center;
+        font-size: 73rpx;
+        color: #000;
+    }
+
+    .hidden_ipt {
+        height: 0rpx;
+        width: 0rpx;
+        border: none;
+        margin: 0;
+    }
+
+    .change-phone {
+        font-size: 24rpx;
+        color: #707070;
+    }
+}

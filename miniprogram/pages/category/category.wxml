@@ -1,0 +1,74 @@
+<!-- pages/category/category.wxml -->
+<view class="container">
+  <view class="categoryBox">
+    <view class="categoryLt">
+      <scroll-view class="scrollLt" style='height:{{winHeight}}px' scroll-y="true">
+        <view class="navList">
+          <block wx:for="{{categoryList}}" wx:key="index">
+            <view class="navItem {{currentIndex == index ? 'current':''}}" data-id="a{{item.id - 1}}" id='{{index}}' data-index="{{index}}" bindtap="goToSlide">
+              <!-- current选中的样式 -->
+              <view class="navItemInner">
+                <view class="navText">{{item.title}}</view>
+              </view>
+            </view>
+          </block>
+        </view>
+      </scroll-view>
+    </view>
+    <view class="categoryRt">
+      <scroll-view class="scrollRt" style='height:{{winHeight}}px' scroll-y="true" scroll-into-view="{{scrollTopId}}" scroll-with-animation="true" bindscroll="onScroll">
+        <view class="contList">
+          <block wx:for="{{categoryList}}" wx:for-index="categoryIndex" wx:key="index">
+            <view class="contItem">
+              <view class="contItem_title" id="a{{categoryIndex}}">
+                {{currentIndex}}{{item.title}}
+              </view>
+              <view class="contItem_cont">
+                <view class="proList">
+                  <block wx:for="{{item.proList}}" wx:for-item="proItem" wx:key="index">
+                    <view class="proItem" data-id="{{index}}">
+                      <view class="itemInner">
+                        <image class="itemImg" src="{{proItem.imgUrl}}"></image>
+                        <text class="itemTxt">{{proItem.title}}</text>
+                      </view>
+                    </view>
+                  </block>
+                  <!-- <view class="proItem">
+                  <view class="itemInner">
+                    <image class="itemImg" src="/images/category/icon02.png"></image>
+                    <text class="itemTxt">产品2</text>
+                  </view>
+                </view>
+                <view class="proItem">
+                  <view class="itemInner">
+                    <image class="itemImg" src="/images/category/icon03.png"></image>
+                    <text class="itemTxt">产品3</text>
+                  </view>
+                </view>
+                <view class="proItem">
+                  <view class="itemInner">
+                    <image class="itemImg" src="/images/category/icon04.png"></image>
+                    <text class="itemTxt">产品4</text>
+                  </view>
+                </view>
+                <view class="proItem">
+                  <view class="itemInner">
+                    <image class="itemImg" src="/images/category/icon05.png"></image>
+                    <text class="itemTxt">产品5</text>
+                  </view>
+                </view>
+                <view class="proItem">
+                  <view class="itemInner">
+                    <image class="itemImg" src="/images/category/icon06.png"></image>
+                    <text class="itemTxt">产品6</text>
+                  </view>
+                </view> -->
+                </view>
+              </view>
+            </view>
+          </block>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+</view>

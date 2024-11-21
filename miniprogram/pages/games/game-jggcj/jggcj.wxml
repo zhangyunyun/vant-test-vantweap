@@ -1,0 +1,4 @@
+<!-- pages/games/game-jggcj/jggcj.wxml -->
+<view class="container">
+  <view class="jggcjBox"></view>
+</view>

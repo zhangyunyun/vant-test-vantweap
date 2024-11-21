@@ -1,0 +1,151 @@
+<!-- index.wxml -->
+<view class="container">
+  <!-- 顶部搜索栏 -->
+  <view class="topBox">
+    <view class="topBoxInner">
+      <!-- 当前位置 -->
+      <view class="positionBox">
+        <view class="positionInner" bindtap="goToAddress">
+          <view class="positionFlex">
+            <view class="posPosition {{ posName?'current':'' }}"></view>
+            <view class="posText">{{ posName }}</view>
+            <view class="posDistance">距您37m</view>
+          </view>
+        </view>
+      </view>
+      <!-- 搜索框 -->
+      <view class="searchBox {{isTap?'tap':''}}">
+        <view class="searchInner">
+          <image class="search-icon" src="/images/ico_search.png" mode="aspectFill" />
+          <input class="search-inp" type="text" name="searchBar" disabled="true" placeholder="搜索商品" placeholder-class="search-plac" bindtap="handleSearch" />
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 轮播图 -->
+  <view class="bannerBox">
+    <view class="bannerInner">
+      <view class="slideBox section-swiper">
+        <swiper class="slide" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" circular="{{circular}}" interval="{{interval}}" duration="{{duration}}">
+          <block wx:for="{{bannerList}}" wx:key="index">
+            <swiper-item>
+              <image class="slideImage" mode="widthFix" src="{{item.imgUrl}}" data-id="{{item.id}}" />
+            </swiper-item>
+          </block>
+        </swiper>
+      </view>
+    </view>
+  </view>
+  <!-- 导航 -->
+  <view class="navBox">
+    <view class="navList">
+      <block wx:for="{{navList}}" wx:key="index">
+        <view class="navItem">
+          <navigator class="navItemInner" url="{{item.url}}?listId={{item.id}}&listTitle={{item.title}}" open-type="navigate" hover-class="none">
+            <image class="itemImg" src="{{item.imgUrl}}" />
+            <text class="itemText">{{item.title}}</text>
+          </navigator>
+        </view>
+      </block>
+    </view>
+  </view>
+  <view class="lineBox"></view>
+  <!-- 公告 -->
+  <view class="noticeBox">
+    <view class="noticeInner">
+      <view class="notice_title">公告：</view>
+      <swiper class="notice_swiper" wx:if="{{noticeList}}" vertical="true" autoplay="{{autoplay}}" circular="{{circular}}" interval="{{interval}}">
+        <block wx:for="{{noticeList}}" wx:key="index">
+          <swiper-item>
+            <navigator url="{{item.noticesUrl}}noticeJumpId={{item.id}}" data-id="{{item.id}}" open-type="navigate">
+              <view class="notice_text">{{item.title}}</view>
+            </navigator>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+  </view>
+  <view class="lineBox"></view>
+  <!-- 热门推荐 -->
+  <view class="commondBox"></view>
+  <!-- 商家列表 -->
+  <view class="merchantBox">
+    <view class="merchantTab">
+      <view class="merchantTabInner">
+        <scroll-view class="scrollTab" scroll-x="true">
+          <block wx:for="{{shopTabList}}" wx:key="index">
+            <view class="navItem {{currentIndex == index?'current':''}}" data-index="{{index}}" data-id="{{item.id}}" data-title="{{item.title}}" bindtap="handleShopTab">
+              <view class="navItemInner">
+                <view class="navText">{{item.title}}</view>
+                <view class="navExaplin">{{item.titleSub}}</view>
+              </view>
+            </view>
+          </block>
+        </scroll-view>
+      </view>
+    </view>
+    <view class="merchantPanel">
+      <view class="goodsList" wx:if="{{shopPanelList.length>0}}">
+        <block wx:for="{{shopPanelList}}" wx:key="index">
+          <view class="goodsItem">
+            <view class="goodsItemInner">
+              <view class="goodsItem_img">
+                <image src="{{item.imgUrl}}"></image>
+              </view>
+              <view class="goodsItem_cont">
+                <view class="goodTitle">{{item.title}}</view>
+                <view class="goodPrice">
+                  <text class="price">{{item.mark}}</text>
+                  <text class="volumes">月售{{item.volumes}}</text>
+                  <text class="capita">人均{{item.capita}}</text>
+                </view>
+                <view class="goodOperate">
+                  <view class="operate">
+                    <text class="start">起送￥{{item.lifting}}</text>
+                    <text class="end">配送 约￥{{item.distribution}}</text>
+                  </view>
+                  <view class="operate">
+                    <text class="minutes">{{item.minutes}}分钟</text>
+                    <text class="distance">{{item.distance}}km</text>
+                  </view>
+                </view>
+                <view class="goodInfo">
+                  <!-- 排名、跟榜 -->
+                  <view class="goodInfo_one">
+                    <view class="ranking">
+                      好评榜 | 安宁区第
+                      <text class="rankinNum">{{item.ranking}}</text>
+                      名
+                    </view>
+                    <view class="suit">{{item.suit}}人跟榜买</view>
+                  </view>
+                  <!-- 标签、满减券 -->
+                  <view class="goodInfo_two" style="display:none;">
+                    <view class="markList">
+                      <block wx:for="{{item.markList}}" wx:for-item="mark" wx:key="index">
+                        <text class="marks">{{mark}}</text>
+                        <!-- <text class="marks">口味好评率100%</text> -->
+                      </block>
+                    </view>
+                    <view class="quanList">
+                      <block wx:for="{{item.quanList}}" wx:for-item="quan" wx:key="index">
+                        <text class="quan">{{quan}}</text>
+                        <!-- <text class="marks">口味好评率100%</text> -->
+                      </block>
+                    </view>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </block>
+      </view>
+      <view class="noList" wx:else>
+        <view class="noInner">
+          <image class="noImg" src="/images/img_noList.png"></image>
+          <text class="noTxt">暂无数据</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

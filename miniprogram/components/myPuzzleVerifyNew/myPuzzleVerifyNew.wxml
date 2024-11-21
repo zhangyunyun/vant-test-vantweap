@@ -1,0 +1,29 @@
+<!-- 滑动验证弹窗 -->
+<view class="slide_model" wx:if="{{isShow}}">
+  <view class="slide_wrapper">
+    <view class="slide_wrapperInner">
+      <view class="closing">
+        <image class="closeImg" src="/images/ico_close.png" bindtap="closeDialog" />
+      </view>
+      <view class="freshing">
+        <image class="refreshImg" src="/images/ico_refresh.png" alt="" bindtap="canvasInit" />
+      </view>
+      <view class="sliding">
+        <view class="sliding_title">请完成安全验证</view>
+        <view class="sliding_vimg">
+          <!-- 背景层 -->
+          <canvas class="codeImg" id="codeImg" type="2d"></canvas>
+          <!-- 拼块 -->
+          <canvas class="sliderBlock" id="sliderBlock" type="2d" style="left:{{xD}}rpx"></canvas>
+        </view>
+        <view class="sliding_slider">
+          <view class="slideTrack">{{ slideTips }}</view>
+          <view class="slideBg {{slideBgCur}}" style="width:{{xD + 40}}rpx"></view>
+          <button class="slideBtn el-icon-s-grid" id="slideBtn" style="left:{{xD}}rpx" bindtouchstart="slide_start" bindtouchmove="slide_move" bindtouchend="slide_end">
+            <image class="slideBtnArrow" src="/images/ico_arrowRightWhite-dubble.png"></image>
+          </button>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

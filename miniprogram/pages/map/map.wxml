@@ -1,0 +1,9 @@
+<!-- pages/map/map.wxml -->
+<view class="container">
+  <view class="mapBox">
+    <map id="" class="map" longitude="{{longitude}}" latitude="{{latitude}}" scale="{{scale}}" markers="{{markers}}" show-location="true" bindregionchange="" bindtap="" bindupdated=""></map>
+  </view>
+  <view class="mapInfos">
+    <view>地图测试</view>
+  </view>
+</view>

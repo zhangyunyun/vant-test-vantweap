@@ -1,0 +1,123 @@
+.categoryBox {
+    position: relative;
+    width: 100%;
+    display: flex;
+}
+
+.categoryLt, .categoryRt {}
+
+.categoryLt {
+    width: 200rpx;
+    background: #f6f6f6;
+
+    .scrollLt {}
+
+    .navList {
+        position: relative;
+
+        .navItem {
+            text-align: center;
+            height: 110rpx;
+            line-height: 110rpx;
+            background-color: #f6f6f6;
+
+            &.current {
+                background-color: #fff;
+
+                .navItemInner {
+                    &::before {
+                        position: absolute;
+                        left: 0;
+                        top: calc(50% - 40rpx);
+                        content: '';
+                        width: 10rpx;
+                        height: 80rpx;
+                        background: #fc407d;
+                        border-radius: 50rpx;
+                        -webkit-border-radius: 50rpx;
+                        -moz-border-radius: 50rpx;
+                        -ms-border-radius: 50rpx;
+                        -o-border-radius: 50rpx;
+                    }
+
+                    .navText {
+                        color: #fc407d;
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+
+        .navItemInner {
+            position: relative;
+            padding-left: 10rpx;
+
+            .navText {
+                color: #333;
+                font-size: 30rpx;
+            }
+        }
+    }
+}
+
+.categoryRt {
+    width: calc(100% - 240rpx);
+    padding: 15rpx 20rpx;
+
+    .scrollRt {}
+
+    .contList {
+        position: relative;
+
+        .contItem {
+            &_title {
+                width: 100%;
+                height: 80rpx;
+                line-height: 80rpx;
+                font-size: 30rpx;
+                font-weight: bold;
+            }
+
+            &_cont {
+                margin-top: 10px;
+                position: relative;
+
+                .proList {
+                    display: -webkit-box;
+                    display: -webkit-flex;
+                    display: flex;
+                    -webkit-flex-wrap: wrap;
+                    flex-wrap: wrap;
+
+                    .proItem {
+                        width: 33.333%;
+                    }
+
+                    .itemInner {
+                        padding: 10rpx;
+                    }
+
+                    .itemImg {
+                        margin: 0 auto;
+                        display: block;
+                        width: 60rpx;
+                        height: 60rpx;
+                    }
+
+                    .itemTxt {
+                        margin-top: 10rpx;
+                        display: block;
+                        text-align: center;
+                        font-size: 26rpx;
+                        color: #5e5e5e;
+                        height: 60rpx;
+                        line-height: 60rpx;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                    }
+                }
+            }
+        }
+    }
+}

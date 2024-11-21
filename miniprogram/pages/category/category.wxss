@@ -1,0 +1,80 @@
+.categoryBox {
+  position: relative;
+  width: 100%;
+  display: flex; }
+
+.categoryLt {
+  width: 200rpx;
+  background: #f6f6f6; }
+  .categoryLt .navList {
+    position: relative; }
+    .categoryLt .navList .navItem {
+      text-align: center;
+      height: 110rpx;
+      line-height: 110rpx;
+      background-color: #f6f6f6; }
+      .categoryLt .navList .navItem.current {
+        background-color: #fff; }
+        .categoryLt .navList .navItem.current .navItemInner::before {
+          position: absolute;
+          left: 0;
+          top: calc(50% - 40rpx);
+          content: '';
+          width: 10rpx;
+          height: 80rpx;
+          background: #fc407d;
+          border-radius: 50rpx;
+          -webkit-border-radius: 50rpx;
+          -moz-border-radius: 50rpx;
+          -ms-border-radius: 50rpx;
+          -o-border-radius: 50rpx; }
+        .categoryLt .navList .navItem.current .navItemInner .navText {
+          color: #fc407d;
+          font-weight: bold; }
+    .categoryLt .navList .navItemInner {
+      position: relative;
+      padding-left: 10rpx; }
+      .categoryLt .navList .navItemInner .navText {
+        color: #333;
+        font-size: 30rpx; }
+
+.categoryRt {
+  width: calc(100% - 240rpx);
+  padding: 15rpx 20rpx; }
+  .categoryRt .contList {
+    position: relative; }
+    .categoryRt .contList .contItem_title {
+      width: 100%;
+      height: 80rpx;
+      line-height: 80rpx;
+      font-size: 30rpx;
+      font-weight: bold; }
+    .categoryRt .contList .contItem_cont {
+      margin-top: 10px;
+      position: relative; }
+      .categoryRt .contList .contItem_cont .proList {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-wrap: wrap;
+        flex-wrap: wrap; }
+        .categoryRt .contList .contItem_cont .proList .proItem {
+          width: 33.333%; }
+        .categoryRt .contList .contItem_cont .proList .itemInner {
+          padding: 10rpx; }
+        .categoryRt .contList .contItem_cont .proList .itemImg {
+          margin: 0 auto;
+          display: block;
+          width: 60rpx;
+          height: 60rpx; }
+        .categoryRt .contList .contItem_cont .proList .itemTxt {
+          margin-top: 10rpx;
+          display: block;
+          text-align: center;
+          font-size: 26rpx;
+          color: #5e5e5e;
+          height: 60rpx;
+          line-height: 60rpx;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap; }

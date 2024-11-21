@@ -1,0 +1,29 @@
+<!-- pages/login/login.wxml -->
+<view class="container">
+  <view class="loginBox">
+    <view class="loginImg">
+      <view class="imgBox">
+        <image src="/images/logoWhite.png"></image>
+      </view>
+    </view>
+    <view class="loginBtn">
+      <button class="btnQuickly" bindtap="loginQuick">手机号一键登录</button>
+      <button bindtap="loginOther">其他手机号登录</button>
+    </view>
+    <view class="addressBox">
+      <view class="addressInfo">
+        <view class="addressTip {{isShowAgree ? '':'hide'}}">
+          <text class="tip">请阅读并勾选用户协议</text>
+        </view>
+        <radio-group bindchange="handleChange" bindtap="handleTap">
+          <label class="radioBox">
+            <!-- checked="true" -->
+            <radio class="radio" value="{{radioCheckVal}}" checked="{{radioChecked}}" />
+            我已阅读并同意
+            <navigator class="xieyi" target="" url="" open-type="navigate">用户服务协议、隐私政策</navigator>
+          </label>
+        </radio-group>
+      </view>
+    </view>
+  </view>
+</view>

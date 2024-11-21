@@ -1,0 +1,16 @@
+<!-- pages/list/list.wxml -->
+<view class="container">
+  <!-- 图文列表 -->
+  <view class="listBox">
+    <view class="list">
+      <block wx:for="{{listItemList}}" wx:key="index">
+        <view class="listItem">
+          <navigator class="listItemLink" url="{{item.url}}">
+            <text class="itemTitle">{{item.title}}</text>
+            <image class="itemImg" src="{{item.imgUrl}}" />
+          </navigator>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>

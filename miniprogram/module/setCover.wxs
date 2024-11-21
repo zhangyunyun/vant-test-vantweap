@@ -1,0 +1,8 @@
+var toCover = function (phone) {
+  var reg = getRegExp('^(\d{3})\d{4}(\d{4})$')
+  var phoneNew = phone.replace(reg, '$1****$2')
+  return phoneNew
+}
+module.exports = {
+  toCover: toCover
+}

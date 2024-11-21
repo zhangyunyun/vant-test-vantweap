@@ -1,0 +1,90 @@
+/**app.wxss**/
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+} 
+
+button {
+  background: initial;
+}
+
+button:focus{
+  outline: 0;
+}
+
+button::after{
+  border: none;
+}
+
+.hide{
+  display:none!important;
+}
+.block{
+  display:block!important;
+}
+.flex{
+  display:flex!important;
+}
+
+/* 弹框 */
+.x-dialog {
+  z-index:500;
+  position:fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.x-dialog__main {
+  position: relative;
+  margin: 0 auto;
+  width: 640rpx;
+  background-color: #fff9ec;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+.x-dialog__close {
+  position: absolute;
+  right: 20rpx;
+  top: 15rpx;
+  width: 50rpx;
+  height: 50rpx;
+  text-align: center;
+}
+
+.x-dialog__close image {
+  display: block;
+  margin: auto;
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.x-dialog__body {
+  text-align: center;
+}
+
+.x-dialog__body {
+  padding: 30rpx;
+  padding-top: 50rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+page {
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}

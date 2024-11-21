@@ -1,0 +1,33 @@
+.listBox {
+  position: relative;
+  width: 100%; }
+  .listBox .list {
+    padding: 0 20rpx; }
+    .listBox .list .listItem {
+      margin-top: 10rpx;
+      height: 240rpx;
+      overflow: hidden;
+      border-radius: 10rpx;
+      -webkit-border-radius: 10rpx;
+      -moz-border-radius: 10rpx;
+      -ms-border-radius: 10rpx;
+      -o-border-radius: 10rpx; }
+      .listBox .list .listItem:first-child {
+        margin-top: 0; }
+      .listBox .list .listItem .listItemLink {
+        display: block; }
+        .listBox .list .listItem .listItemLink .itemTitle {
+          height: 40rpx;
+          line-height: 40rpx;
+          color: #333;
+          font-size: 30rpx; }
+        .listBox .list .listItem .listItemLink image {
+          margin-top: 10rpx;
+          display: block;
+          width: 100%;
+          height: 240rpx;
+          border-radius: 10rpx;
+          -webkit-border-radius: 10rpx;
+          -moz-border-radius: 10rpx;
+          -ms-border-radius: 10rpx;
+          -o-border-radius: 10rpx; }

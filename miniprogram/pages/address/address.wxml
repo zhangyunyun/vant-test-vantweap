@@ -1,0 +1,55 @@
+<!-- pages/address/address.wxml -->
+<view class="container">
+  <view class="topBox">
+    <view class="topBoxInner">
+      <!-- 当前位置 -->
+      <view class="positionBox">
+        <view class="positionInner" bindtap="goToCity">
+          <view class="positionFlex">
+            <!-- <image class="ico_arrowPosi" src="/images/ico_position-current.png"></image> -->
+            <view class="posPosition {{posCity?'current':''}}"></view>
+            <view class="posText">{{posCity}}</view>
+            <image class="ico_arrowRight" src="/images/ico_arrowRight.png"></image>
+          </view>
+        </view>
+      </view>
+      <!-- 搜索框 -->
+      <view class="searchBox {{isTap?'tap':''}}">
+        <view class="searchInner">
+          <image class="search-icon" src="/images/ico_search.png" mode="aspectFill" />
+          <input class="search-inp" type="text" name="searchBar" disabled="true" placeholder="搜索商品" placeholder-class="search-plac" bindtap="handleSearch" />
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="textBox">
+    <view class="textInner">已选地址:{{posAddress}}</view>
+  </view>
+  <view class="addressItemBox">
+    <view class="addressItemInner">
+      <view class="itemTitle">当前定位</view>
+      <view class="itemList">
+        <view class="itemListInner">
+          <view class="itemLis">
+            <view class="itemLisInner">
+              <view class="itemLisInner_lt">{{posName}}</view>
+              <view class="itemLisInner_rt">
+                <text class="red">重新定位</text>
+              </view>
+            </view>
+          </view>
+          <view class="itemLis itemMore" bindtap="goToMap">
+            <view class="itemLisInner">
+              <view class="itemLisInner_lt">更多地址</view>
+              <view class="itemLisInner_rt">
+                <image class="ico_arrowRight" src="/images/ico_arrowRight.png"></image>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 城市选择器 -->
+  <selector-component show="{{selectorVisible}}" key="{{selectorCity.key}}" referer="{{selectorCity.referer}}" hotCitys="{{selectorCity.hotCitys}}" bindselect="onSelectCity"></selector-component>
+</view>

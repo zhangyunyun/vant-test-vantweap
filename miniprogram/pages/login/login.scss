@@ -1,0 +1,148 @@
+.loginBox {
+    width: 100%;
+    padding: 40rpx;
+    box-sizing: border-box;
+
+    .loginImg {
+        margin: 100rpx auto 0;
+        width: 140rpx;
+        height: 140rpx;
+
+        .imgBox {
+            width: 100%;
+            height: 100%;
+            background: #fc407d;
+            border-radius: 30rpx;
+            -webkit-border-radius: 30rpx;
+            -moz-border-radius: 30rpx;
+            -ms-border-radius: 30rpx;
+            -o-border-radius: 30rpx;
+        }
+
+        image {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .loginBtn {
+        margin-top: 150rpx;
+
+        button {
+            margin-top: 20rpx;
+            width: 100%;
+            height: 90rpx;
+            line-height: 90rpx;
+            text-align: center;
+            font-size: 34rpx;
+            color: #fff;
+            background: #b3b3b3;
+            border: 1px solid #e3e3e3;
+            border-radius: 20rpx;
+            -webkit-border-radius: 20rpx;
+            -moz-border-radius: 20rpx;
+            -ms-border-radius: 20rpx;
+            -o-border-radius: 20rpx;
+
+            &.btnQuickly {
+                color: #f3f3f3;
+                background: #fc407d;
+                border: 1px solid #fc407d;
+            }
+        }
+    }
+
+    .addressBox {
+        margin-top: 90rpx;
+        position: relative;
+        height: 90rpx;
+        line-height: 90rpx;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .addressInfo {
+            display: inline-block;
+            position: relative;
+        }
+
+        .addressTip {
+            position: absolute;
+            left: -15rpx;
+            top: -50rpx;
+            height: 55rpx;
+            line-height: 55rpx;
+            padding: 5rpx 20rpx;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 8rpx;
+            -webkit-border-radius: 8rpx;
+            -moz-border-radius: 8rpx;
+            -ms-border-radius: 8rpx;
+            -o-border-radius: 8rpx;
+
+            &:after {
+                position: absolute;
+                content: "";
+                bottom: -12rpx;
+                left: 20rpx;
+                width: 0;
+                height: 0;
+                border-left: 5px solid transparent;
+                border-right: 5px solid transparent;
+                border-top: 5px solid rgba(0, 0, 0, 0.5);
+            }
+
+            .tip {
+                display: block;
+                color: #fff;
+                font-size: 26rpx;
+            }
+        }
+
+        .radioBox {
+            position: relaitve;
+            color: #979797;
+            font-size: 26rpx;
+            text-align: center;
+
+            radio .wx-radio-input {
+                position: relative;
+                top: -3rpx;
+                width: 30rpx;
+                height: 30rpx;
+                text-align: center;
+                border-radius: 50%;
+            }
+
+            radio .wx-radio-input.wx-radio-input-checked {
+                /* 背景颜色 */
+                background-color: #fff !important;
+
+                /* 边框颜色 */
+                border-color: #fc407d !important;
+            }
+
+            /* 选中后的实心样式*/
+            radio .wx-radio-input.wx-radio-input-checked::before {
+                /* 将对号去掉 */
+                content: '';
+
+                /*实心圆圈的大小*/
+                width: 18rpx;
+                height: 18rpx;
+
+                /*将圆角设置成50%才是一个圆*/
+                border-radius: 50%;
+
+                /*圆圈颜色*/
+                background-color: #fc407d;
+            }
+        }
+
+        .xieyi {
+            display: inline-block;
+            color: #fc407d;
+        }
+    }
+}

@@ -1,0 +1,9 @@
+<!-- pages/reset/reset.wxml -->
+<view class="container">
+  <view class="reset">
+    <view class="resetList">
+      <view></view>
+      <view></view>
+    </view>
+  </view>
+</view>

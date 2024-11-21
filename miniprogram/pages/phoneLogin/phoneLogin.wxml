@@ -1,0 +1,37 @@
+<!-- pages/phoneLogin/phoneLogin.wxml -->
+<view class="container">
+  <view class="loginBox">
+    <view class="loginImg">
+      <view class="imgBox">
+        <image src="/images/logoWhite.png"></image>
+      </view>
+    </view>
+    <view class="loginForm">
+      <view class="loginFormItem loginFormItemNum">
+        <view class="formItemInner">
+          <input type="number" placeholder="请输入手机号" placeholder-class="placeholder-class" maxlength="11" value="{{phoneNum}}" bindinput="getPhoneNum" auto-focus="{{false}}" adjust-position="{{false}}" />
+          <image class="close {{phoneCloseIsShow ? '' : 'hide'}}" src="/images/ico_close.png" bindtap="clearPhone"></image>
+          <button class="code {{verifyCurIsShow? 'current' : ''}}" disabled="{{verifyDisabled}}" bindtap="getCodeNum">
+            {{verifyDesc}}
+          </button>
+        </view>
+      </view>
+      <view class="loginFormItem loginFormItemCode">
+        <view class="formItemInner">
+          <image class="close {{verifyCloseIsShow?'':'hide'}}" src="/images/ico_close.png" bindtap="clearCode"></image>
+          <input type="number" placeholder="请输入验证码" placeholder-class="placeholder-class" maxlength="6" value="{{verifyNum}}" bindinput="getVerifyNum" auto-focus="{{false}}" adjust-position="{{false}}" />
+        </view>
+      </view>
+      <view class="loginFormItem loginFormItemBtn">
+        <view class="formItemInner">
+          <!-- <button class="loginBtn {{phoneNum.length == 11 && verifyNum.length == 6 && verifyPuzzle === true?'current':''}}" bindtap="handleSubmit">
+            登录
+          </button> -->
+          <button class="loginBtn current" bindtap="handleSubmit">登录</button>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- 图片验证组件 -->
+<myPuzzleVerify id="puzzleVerify" v-show="isShow" isShow="{{isShow}}" bind:customClose="handleClose" bind:customEvent="handlePuzzleVerify"></myPuzzleVerify>

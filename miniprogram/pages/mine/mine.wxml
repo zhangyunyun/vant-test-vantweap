@@ -1,0 +1,114 @@
+<!-- pages/mine/mine.wxml -->
+<view class="container">
+  <view class="mineInfo">
+    <view class="mineInfoInner">
+      <!-- <view class="iconBox">
+        <view class="iconItem">
+          <view class="iconItemInner">
+            <image class="icon" src="/images/ico_kefu.png"></image>
+            <view class="txt">客服</view>
+          </view>
+        </view>
+        <view class="iconItem">
+          <view class="iconItemInner">
+            <image class="icon" src="/images/ico_shezhi.png"></image>
+            <view class="txt">设置</view>
+          </view>
+        </view>
+      </view> -->
+      <view class="infoItem">
+        <view class="infoItem_lt">
+          <image class="infoHead" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAUEBAUEAwUFBAUGBgUGCA4JCAcHCBEMDQoOFBEVFBMRExMWGB8bFhceFxMTGyUcHiAhIyMjFRomKSYiKR8iIyL/2wBDAQYGBggHCBAJCRAiFhMWIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiL/wgARCAC0ALQDAREAAhEBAxEB/8QAHAABAAAHAQAAAAAAAAAAAAAAAAECBAUGBwgD/8QAGwEBAQACAwEAAAAAAAAAAAAAAAECBQMEBgf/2gAMAwEAAhADEAAAAOywAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQsRC0GJZpQAAAAAAAIJbb2MPu18WeSNdkc6M0AAAAAAAQsgusr6bUT2kl7fkzp5x5o8/vp8+rZxxlAAAAAAlswW7rn3D6jRO7LMp3Xzjk81Oxr2v39PCzQAAAASFkGQgvNj6dhnH6XzcsuTf+fyzZ2PmRgGW6yRrr3OrAiEmmQAAprlqa+s149NkTUYTPT2vj2o98up15n8UqscB51ZHN43kwFvc3avKprJoAA8a5yv0e5OtuB464uvyvj9htWGzDLi6yz+LXvHqAQIWW68/LE+tdBZfOM3w00QAa6y3+r3rej58z9EHOc+mYBh64Qym7c/m+4cfHgCWi8tvrFVl1emcPmM6ADQ199lrT7MnmRLWsb6fQXF9SIzXNrOq8vj1bOEyghMNu55pw+s3TPq9Rz5Fc51YqBoy+7v7XbUnlRLVnvb5L4/tEXJ65dW+XXbtvz3InQtLt2FsMLx32vZ6qRz1+fS6snxyvnCUQMMy3Gi3vem3y6rnES03taHnvqi8VO7VjbKz4d6mdtjkVlC12XUyzPz3SPH8ymAB51pO+3wtvNsvHXB1sAek1rj6ymc9bOCYpXJ5OzNjnGxZ7uG55azo2/Lcjx6YAAkMIy3Ounp6J2r41eZtJlzVVLjjHnbY73cMm5xVvaVy5S0m0HlrjOvNKAABCyCFEcasiCVYkLACFjEVAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAH/8QARRAAAQMDAQMHBwcJCQAAAAAAAQIDBAAFEQYHEiEQExQxQVFhICJCcYGRoRUjMDJSYsEzQFNgc4KSseEWJDRDcoOEosL/2gAIAQEAAT8A/Wfh+azrvBtbCnZ8tplvvdWE1M2taajLKG335Cx+hZJFM7XbGsZWxcG0DrWpjh8Cas+srJeiEwLiwtw/5azur/hPGhj8xNa32josq1W2zAP3LHnq60NevvNSnn7k+Zd6lKlu97izujwApNwhxk4aQnh9lNPX3fZW023jeBGT2Zph2Ci0ccomDiFdSt7vzWj9qM+0PIi3xa5cE4AcJKnGh/6FQJrFwiMyIbrbjLo3kKQc5H5htD1X/ZuwYjLHT5WUM96e9Vc/zIU64VOPrJUpZ4laj204848rLilE/DkbZckvIaaaU644cJQgEqWewAVatlGobgwFvIYhgjIS+s7/ALgKuOyPUcRkuM9Gl44lLKyFfEVsz1NJsOo/kG8B1pp9zCG3+BZc/rSfpt4VtKuyrrr2UjPzUIBlA7M+lTi99zw7uTq/rWzHRjNotTdzmNAz5YCgSOLaOxPIfqmtf6QbvVsXNhI3LrCBdYcQMEkcd2tM3L5X0zbp3pPNJKh3HHH41vDNZArh9BIkNxmFuvrS22kEqUsgAAVqTbCzGdWxp1jpDgO6X3hhsHw7TU7aFqactRXc3WfuMeYB7uNbN9SXifrVmPOuct9pbSyUOuFQq+uKc1PdXF8SZbuT++eWChL1yjNufUW6kK9RIBqMhLUdptIwAkAAcqxvNqBHA8K01ZTYbMYPO84A84tHZhKlqUB7M1fLBIuq0uxbvPgOtghPR1jcJ+8kirpqTV+h3h8soZuttJwJIBQr1Z7DWmta2vU7P9zc3H043mHMJWKBHf5S3EttKUsgADJJOBW0HXT2orguFBdLdqZOOGRzpB+srw7hWjNlb91aROvpUxEVxRHGUuKH4VbNJWW0shEO2xx99SApR9ZPGkQYyF84iO0lY4BQQARWpWVxdXXZlfWJTh9hUSOVBKHApHAgjBrTlwRd9OQJqOIfZSr1HHHyT1VdbXHu9skQpiErZeQUkHxqSzL0xqZ9lh5TUmC8UJWnIzgnB9taB1i1quygu4RcGMJfbH8x4Gk+R2Gtqt8XadHmOwrD85fNAjrCfSrZdpdN+1H0mY3vRIGFkdhX2U2gIG6kYTwxgYxyHqraxaRA1qJKEYbnNhz94DB5e2tjV/DsGTZnl+ewedZyeO4esew+VwrW0lle0e6vAJW0JGCO8gAGtKakRatdQZMTKIzxDL4+qCFHrx4U2reHkdhrbZKUb/bo2eCI5WE+JJH4VscjIZ0Wp5A4vPqKvYAOXvrbBael6VanIGVw3QSfungeXhWm7y7p/UEW4NFRDTg5xPHzkHrFQpjU+CxKYVvtPoStKgc5B5ceNZArWusY2mLUshSFznUEMMgjJPefAUta3pCnHlqcWteVKPWSTV0whllYCUkLyCjuxVhkGVYIDyjlTkdCz7U+TtqgqFztc4DLa21NK+JFbGLgh/S0iH6cZ8+5QBHKK1JDTP0xco6hkOx1gDxwaBG76u3kYiyJa9yJHeeX2JZQVH3AVF0LqSZgsWqT63RzY+OK2fQrpYdNqh6gLKAyvLKudBIR3ew1J1RY4v8AibrBQR2F9OalbSdMRRxuaHP2QK/5VK2zWNsHosea/wDuBA+Jq8bYbxMQtFrjtQkHOF8VrqTLkz5a35z7z7yjxW6d5RqOnfkIT4gn2VO3pLzDDYytxW6keJOBVpjdDs8ON+hYQj3ADyD1GtoenTqHSL7LCMyWfnWh3kdlaH1MvSep0Pv56K781ISAc4B+t6xUGWzOiIkRVpcac85Kk9RB5b+46zp+eYrK3XywoNoQMlSsHAqFs0dZYEvU9zjWpjHFKl+eRRumhLBwt9udvMlPALlAbhI+H/Wn9qVzS3zVqgQbc0OoMt5I/CpOttRzMl27ykk9jatwfDFSLhMmcZct5/8AauqV+PJ6vIiNBoF1zgevj2Vs4sC9Q6zRKeB6Hbylw5HWr0RSfJVxQoYraPs7d5969WRkrC+MiO2OOftprS2ubrpNwsIKXoSTlURwnCD909lWza7YJaEmX0mIs9YWjeAPrGaf2o6XYZK+nlfg20omtQ7Y5koLZsLAioOcPu8V48B1VOuMy5yS/PkvPuq9JxZNIbU4rm2UKWvuQnJpuy3Rz8nbpivUwo0bFdh12uaP+OunIchj8vHeb/1oI5AK3TSWs+lSENtJyVcfGrJY7hqm5IhW1tXNZ89wglLYP2q0vp2JpqytQYSOI85xwji4rvPlrSChXCtRbOLLfyXSyYso9TzGB70kYNXDY1do6yYExh8ejvgoVTeyLUp+uIyf90moOxN8kKuV0CO9LCPxNWvZbp224UuMZSx6T53h7sAVGtkKIgJixWWUjqCEAVzSfsp/hotp+yP4acjMuJwtpJHimrhouxXMKEu2RiT6SUBCveKuexa1v5Va5b8VZ9FWFpqXsbvrBPRJUZ9HtSaZ2SalWvDnRmkftSfwqz7F46Fh29TC/wDcZG4Ktloh2iIiNAjNssp6koSB9Jg+Xx5Mfr1//8QAIREAAgEEAwEAAwAAAAAAAAAAAAERECAwMQISIUBBYHD/2gAIAQIBAT8A/fIPDwj4lTrJKJXySdyGQyCPgQ/llnH1+nLDOSaPeJD2O9WOxav5bvYtWfjGtnLQ7WLVish0inhJItnLWNEHiO53d/HPBGBYYrKJpJJJ5SKTmn+A/wD/xAAvEQABBAAFAgQFBAMAAAAAAAABAAIDBAUGESExEBITIEFRFCIwMmEzQEJgI3GR/9oACAEDAQE/AP7IfICVr+yA0UVaWY6MChwC2/0T8uWgp8MtV/vav9/sAgsIwF9r/JJs1V6kcI7YghXkcd0ylodSVLAZH6OGyxfLcUg74NipYnQyFrgt/rflYFhpuz78KKDtHaNgmxtGwRAKnmZC3VxU+aq0J0ZuoM1VJHaOGix6lDai+JgRB+mSuFp0yzUbDUD/AHTB0cQ1pKzDjEliYxN4HXC8RdC4xP8AtKtsEcpb6Lfpou7zxxl50Cw3K75/mm2CiwHD4dnaFY5SpRVy6EDVYXGBUY0eyARVskV3EKQuc9zuoJDtVYlEztVWtNi2c0EKrSp39oz2uV/Cp6R+YbIa+Zoc93aOVgWCsrQ+PLysWzKIiYoFLiNmZ2rnFfESOGhKwd7X02H8dZY++NzFfhMFh0Z9/K3TVVZ315Q9qh8PEaYLhyFjOGOoykD7T5stUPibWrvRZkxH4WDwmclOcH9NdAsqWhNV7T6dWj1WaqHhzeMPXy7HpgbNMOa31WLUTYqO13IRGh8uTWDteVmqQvuke3kyva8K12H16AarXRYvSFyuWqaMxSGNyG3TRbNWEYXLck42UMfhx9qY3va4K2A2Zw/J8uT5h87FmuBzLff79SqLzFZa4e4UD+9gQcG8qW7XiGrnKbMNNmwdqsXkjt2C+EcplC27ZrT/AMUeCXn/AMVFlW6/lUcpxM3mVavFVZ2xhSnQLXw4nOVh/iTOd+fLgd81LQceFjVFuI1fEZypYnQEscN1uFudwqv6wJPCfmE6COszuK+Fxe7vIe0KHK7eZnEpmAUo+GApmH12cNTYmt4C7R006SODz2hZivtq1jC3k+YEgarL+OhhEMp2WIYHXxEd8fKs5ZuRE9u4TcAvP20VDKQbo6cqvSgrDSNoCdZhj5cjiVRvLkMUqnh4Tb8DuHJsjXcHpqi9ElX8ShpRF5O6v333JjI7jzgkcKhjlqn67KtmqN36wRzVU9Ap83u/gFPj9uf10TrErvvcu8+67yhLI3cFQYnaj4eVWzTZiPz7qHN0Dx84T811QNlbzVK7URBWbMlh3c8rUfR3K7QgB00Wi06g9CAhr6dOP7v/AP/Z"></image>
+        </view>
+        <view class="infoItem_rt">
+          <!-- <view class="infoText">请点击登录</view> -->
+          <view class="infoText">yunzlian</view>
+          <view class="infoOperate">
+            <text class="operateTxt">账户设置</text>
+            <text class="operateTxt">支付设置</text>
+          </view>
+        </view>
+      </view>
+      <view class="barItem">
+        <view class="items">
+          <view class="icon icon-sc"></view>
+          <view class="txt">收藏</view>
+        </view>
+        <view class="items">
+          <view class="icon icon-gz"></view>
+          <view class="txt">关注</view>
+        </view>
+        <view class="items">
+          <view class="icon icon-zj"></view>
+          <view class="txt">足迹</view>
+        </view>
+        <view class="items">
+          <view class="icon icon-yhq"></view>
+          <view class="txt">优惠券</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="mineBox">
+    <view class="mineInner">
+      <!-- 我的订单模块 -->
+      <view class="mineSide">
+        <!-- <view class="sideTitle">
+          我的订单
+          <text class="all">查看全部</text>
+        </view> -->
+        <view class="sideCont">
+          <view class="itemList">
+            <view class="items">
+              <view class="icon icon-dd"></view>
+              <view class="txt">我的订单</view>
+            </view>
+            <view class="items">
+              <view class="icon icon-dfk"></view>
+              <view class="txt">待付款</view>
+            </view>
+            <view class="items">
+              <view class="icon icon-dsy"></view>
+              <view class="txt">待使用</view>
+            </view>
+            <view class="items">
+              <view class="icon icon-dpj"></view>
+              <view class="txt">待评价</view>
+            </view>
+            <view class="items">
+              <view class="icon icon-sh"></view>
+              <view class="txt">退换/售后</view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <!-- 其他模块 -->
+      <view class="mineSide">
+        <view class="sideTitle">
+          其他
+          <text class="all">全部</text>
+        </view>
+        <view class="sideCont">
+          <view class="itemList itemList4">
+            <view class="items">
+              <view class="icon icon-ljd"></view>
+              <view class="txt">免费领鸡蛋</view>
+            </view>
+            <view class="items">
+              <view class="icon icon-xhms"></view>
+              <view class="txt">限时秒杀</view>
+            </view>
+            <view class="items">
+              <view class="icon icon-ljd"></view>
+              <view class="txt">签到领豆</view>
+            </view>
+            <view class="items">
+              <view class="icon icon-lhb"></view>
+              <view class="txt">答题领红包</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

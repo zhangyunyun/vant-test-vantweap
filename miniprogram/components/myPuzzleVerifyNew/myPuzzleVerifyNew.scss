@@ -1,0 +1,207 @@
+/* 拼图滑动验证 */
+.slide_model {
+    z-index: 500;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slide_wrapper {
+    position: relative;
+    margin: 0 auto;
+    width: 658rpx;
+    background-color: #fff9ec;
+    border-radius: 20rpx;
+    -webkit-border-radius: 20rpx;
+    -moz-border-radius: 20rpx;
+    -ms-border-radius: 20rpx;
+    -o-border-radius: 20rpx;
+}
+
+.slide_wrapperInner {
+    padding: 30rpx;
+}
+
+.closing {
+    z-index: 2;
+    position: absolute;
+    right: 20rpx;
+    top: 15rpx;
+    width: 40rpx;
+    height: 40rpx;
+    text-align: center;
+
+    .closeImg {
+        display: block;
+        margin: auto;
+        width: 40rpx;
+        height: 40rpx;
+    }
+}
+
+.freshing {
+    z-index: 2;
+    position: absolute;
+    right: 80rpx;
+    top: 15rpx;
+    width: 40rpx;
+    height: 40rpx;
+    text-align: center;
+
+    .refreshImg {
+        display: block;
+        margin: auto;
+        width: 40rpx;
+        height: 40rpx;
+    }
+}
+
+.sliding {
+    width: 100%;
+
+    .sliding_title {
+        font-size: 32rpx;
+        text-align: center;
+        height: 60rpx;
+        line-height: 60rpx;
+    }
+
+    .sliding_vimg {
+        margin-top: 20rpx;
+        position: relative;
+        width: 100%;
+        height: 280rpx;
+
+        .codeImg, .sliderBlock {
+            width: inherit;
+            height: inherit;
+        }
+
+        .codeImg {
+            /* position: relative;
+            z-index: 1;
+            display: block;
+            width: 100%;
+            height: 280rpx; */
+
+            /*
+            display: block;
+            width: 100%;
+            height: 280rpx; */
+        }
+
+        .sliderBlock {
+            /* position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 280rpx;
+            z-index: 999; */
+            position: absolute;
+            top: 0;
+            z-index: 100;
+        }
+    }
+
+    .sliding_slider {
+        margin-top: 30rpx;
+        position: relative;
+        width: 100%;
+        height: 80rpx;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+
+        .slideTrack {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            height: 80rpx;
+            line-height: 80rpx;
+            text-align: center;
+            color: #5e5e5e;
+            font-size: 30rpx;
+            padding-right: 15rpx;
+            padding-left: 70rpx;
+            background: #ffdbdb;
+            border-radius: 15rpx;
+            -webkit-border-radius: 15rpx;
+            -moz-border-radius: 15rpx;
+            -ms-border-radius: 15rpx;
+            -o-border-radius: 15rpx;
+        }
+
+        .slideBg {
+            z-index: 90;
+            position: absolute;
+            top: calc(50% - 40rpx);
+            height: 80rpx;
+            line-height: 80rpx;
+            background: #fc6b99;
+            color: #fff;
+            border-radius: 15rpx;
+            -webkit-border-radius: 15rpx;
+            -moz-border-radius: 15rpx;
+            -ms-border-radius: 15rpx;
+            -o-border-radius: 15rpx;
+
+            /* 默认 */
+            &.status-1 {
+                background: #fc6b99;
+                color: #fff;
+            }
+
+            /* 成功 */
+            &.status-2 {
+                background: #5cb85c;
+                color: #fff;
+            }
+
+            /* 失败 */
+            &.status-3 {
+                background: #d9534f;
+                color: #fff;
+            }
+        }
+
+        .slideBtn {
+            z-index: 100;
+            position: absolute;
+            left: 1rpx;
+            top: calc(50% - 40rpx);
+            padding: 0;
+            width: 80rpx;
+            height: 80rpx;
+            line-height: 80rpx;
+            background: #fc407d;
+            box-shadow: #cc1b53 0 0 1rpx;
+            text-align: center;
+            font-size: 28rpx;
+            color: #fff;
+            border-radius: 15rpx;
+            -webkit-border-radius: 15rpx;
+            -moz-border-radius: 15rpx;
+            -ms-border-radius: 15rpx;
+            -o-border-radius: 15rpx;
+
+            &:hover {
+                background: #cc1b53;
+            }
+
+            image.slideBtnArrow {
+                margin: auto;
+                position: absolute;
+                left: calc(50% - 20rpx);
+                top: calc(50% - 20rpx);
+                width: 40rpx;
+                height: 40rpx;
+            }
+        }
+    }
+}
